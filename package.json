@@ -1,0 +1,27 @@
+{
+  "name": "use-shortener",
+  "version": "1.0.0",
+  "description": "GOOD",
+  "main": "bijective.js",
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.2",
+    "save": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiloSi/URLShortener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiloSi/URLShortener/issues"
+  },
+  "homepage": "https://github.com/MiloSi/URLShortener#readme"
+}

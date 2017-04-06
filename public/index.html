@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>URL Shortener</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </head>
+  <body>
+    <br><br>
+
+    <form id="createUrl" role="form">
+      <input type="url" id="longUrl">
+      <button type="submit">Shorten !</button>
+    </form>
+
+    <br><br>
+
+    <h2><strong id="shortUrl"></strong></h2>
+
+    <script type="text/javascript">
+      var API_SERVER = 'http://localhost:3000';
+
+      $( "#createUrl" ).submit(function( event ) {
+
+        event.preventDefault();
+
+        var longUrl = $('#longUrl').val();
+
+        $.ajax({
+          url: API_SERVER + '/url/' + encodeURIComponent(longUrl)
+          , crossDomain: true
+          , dataType: "json"
+          , type: 'GET'
+          , data: {}
+          , success: success
+          , error: function(jqXHR, textStatus, errorThrown){
+              alert(errorThrown);
+          }
+        });
+
+      });
+
+      var success = function(data){
+        $('#shortUrl').text(API_SERVER +'/' +data.key);
+      };
+    </script>
+  </body>
+ </html>
